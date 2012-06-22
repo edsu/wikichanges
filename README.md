@@ -11,12 +11,14 @@ Install
 Usage
 -----
 
-    var wikichanges = require("wikichanges");
+```javascript
+var wikichanges = require("wikichanges");
 
-    w = new wikichanges.WikiChanges();
-    w.listen(function(update) {
-      console.log(y.page)
-    });
+w = new wikichanges.WikiChanges();
+w.listen(function(update) {
+  console.log(y.page)
+});
+```
 
 License
 -------

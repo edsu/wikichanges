@@ -1,8 +1,7 @@
 {
   "name": "wikichanges",
-  "author": "Ed Summers <ehs@pobox.com>",
   "version": "0.0.1",
-  "private": true,
+  "author": "Ed Summers <ehs@pobox.com>",
   "dependencies": {
     "irc-js": "0.2.x",
     "underscore": "1.3.x"
