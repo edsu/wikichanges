@@ -1,12 +1,7 @@
 wikichanges
 ===========
 
-A node.js library for getting an edit stream from 37 major language Wikipedias.
-The Wikipedia MediaWiki installations are configured to log changes in  
-[specific channels](http://meta.wikimedia.org/wiki/IRC/Channels#Raw_feeds) at 
-irc.wikimedia.org. wikichanges connects to all 37 major language channels and 
-looks for updates, which it parses and then presents to a callback you provide 
-as a bit of JSON that looks like:
+A node.js library for getting an edit stream from 37 major language Wikipedias.  The Wikipedia MediaWiki installations are configured to log changes in  [specific channels](http://meta.wikimedia.org/wiki/IRC/Channels#Raw_feeds) at irc.wikimedia.org. wikichanges connects to all 37 major language channels and looks for updates, which it parses and then presents to a callback you provide as a bit of JSON that looks like:
 
 ```javascript
 { 
