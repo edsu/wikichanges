@@ -36,7 +36,7 @@ Here's a simple example of listening on all Wikipedia channels and printing
 out the page that changed along with its URL.
 
 ```javascript
-var wikichanges = require("wikichanges");
+var WikiChanges = require("wikichanges");
 
 w = new wikichanges.WikiChanges();
 w.listen(function(change) {
@@ -44,11 +44,21 @@ w.listen(function(change) {
 });
 ```
 
-To Do
------
+If you would like to listen only on a particular channel or channels 
+create the wikichanges object like this:
 
-* add more of the Wikimedia properties that log in IRC
-* normalize and document the change JSON key names a bit more
+```javascript
+w = new WikiChanges({channels: ["#de.wikipedia"]);
+```
+
+By default wikichanges picks a IRC nick of `wikichanges-{hostname}` where 
+hostname is the hostname for the computer that your program is running on.
+If you would like to control the IRC nick used by your program use the 
+`ircNickname` option:
+
+```javascript
+w = new WikiChanges({ircNickname: 'super-awesome'})
+```
 
 License
 -------
