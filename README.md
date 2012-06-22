@@ -48,16 +48,16 @@ If you would like to listen only on a particular channel or channels
 create the wikichanges object like this:
 
 ```javascript
-w = new wikichanges.WikiChanges({channels: ["#de.wikipedia"]);
+var w = new wikichanges.WikiChanges({channels: ["#de.wikipedia"]);
 ```
 
 By default wikichanges picks a IRC nick of `wikichanges-{hostname}` where 
-hostname is the hostname for the computer that your program is running on.
+hostname is the hostname for the computer that your program is running.
 If you would like to control the IRC nick used by your program use the 
 `ircNickname` option:
 
 ```javascript
-w = new wikichanges.WikiChanges({ircNickname: 'super-awesome'})
+var w = new wikichanges.WikiChanges({ircNickname: 'super-awesome'})
 ```
 
 License
