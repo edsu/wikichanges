@@ -38,7 +38,7 @@ out the page that changed along with its URL.
 ```javascript
 var WikiChanges = require("wikichanges");
 
-w = new wikichanges.WikiChanges();
+var w = new wikichanges.WikiChanges();
 w.listen(function(change) {
   console.log(change.page + " " + change.pageUrl)
 });
@@ -48,7 +48,7 @@ If you would like to listen only on a particular channel or channels
 create the wikichanges object like this:
 
 ```javascript
-w = new WikiChanges({channels: ["#de.wikipedia"]);
+w = new wikichanges.WikiChanges({channels: ["#de.wikipedia"]);
 ```
 
 By default wikichanges picks a IRC nick of `wikichanges-{hostname}` where 
@@ -57,7 +57,7 @@ If you would like to control the IRC nick used by your program use the
 `ircNickname` option:
 
 ```javascript
-w = new WikiChanges({ircNickname: 'super-awesome'})
+w = new wikichanges.WikiChanges({ircNickname: 'super-awesome'})
 ```
 
 License
