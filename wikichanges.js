@@ -57,14 +57,15 @@ function parse_msg(msg) {
   var isUnpatrolled = flag.match(/!/) ? true : false;
 
   var page = m[1];
-  var wikipedia = msg[0];
+  var channel = msg[0];
+  var wikipedia = wikipedias[channel]['long'];
   var wikipediaUrl = 'http://' + wikipedia.replace('#', '') + '.org';
   var pageUrl = wikipediaUrl + '/wiki/' + page.replace(/ /g, '_');
   var userUrl = wikipediaUrl + '/wiki/User:' + user;
   var namespace = getNamespace(wikipedia, page);
 
   return {
-    channel: msg[0],
+    channel: channel,
     flag: flag, 
     page: page, 
     pageUrl: pageUrl,

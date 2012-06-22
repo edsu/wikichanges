@@ -6,12 +6,12 @@ A node.js library for getting an edit stream from 37 major language Wikipedias. 
 ```javascript
 { 
   channel: '#en.wikipedia',
+  wikipedia: 'English Wikipedia',
   page: 'Persuasion (novel)',
   pageUrl: 'http://en.wikipedia.org/wiki/Persuasion_(novel)',
   url: 'http://en.wikipedia.org/w/index.php?diff=498770193&oldid=497895763',
   delta: -13,
   comment: '/* Main characters */',
-  wikipedia: '#en.wikipedia',
   wikipediaUrl: 'http://en.wikipedia.org',
   user: '108.49.244.224',
   userUrl: 'http://en.wikipedia.org/wiki/User:108.49.244.224',
