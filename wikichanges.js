@@ -5,7 +5,6 @@ var os = require("os"),
 function WikiChanges(opts) {
   if (! opts) opts = {};
   this.channels = opts.wikipedias || _.keys(wikipedias);
-  console.log(this.channels);
   this.ircNickname = opts.ircNickname || "wikichanges-" + os.hostname();
 }
 
