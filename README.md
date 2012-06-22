@@ -47,7 +47,7 @@ w.listen(function(change) {
 To Do
 -----
 
-* add more of the WikiMedia properties that log in IRC
+* add more of the Wikimedia properties that log in IRC
 * normalize and document the change JSON key names a bit more
 
 License
