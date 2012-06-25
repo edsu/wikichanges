@@ -33,7 +33,7 @@ environment set up.
     % sudo apt-get install nodejs npm
     % git co https://github.com/edsu/wikichanges.git
     % cd wikichanges
-    % npm install wikichanges
+    % npm install
     % node example.js
 
 Usage
