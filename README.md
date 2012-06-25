@@ -27,7 +27,14 @@ wikichanges is a node.js library for getting an edit stream from the 37 major la
 Install
 -------
 
+If you aren't on Ubuntu, try to do the equivalent to get your node.js
+environment set up.
+
+    % sudo apt-get install nodejs npm
+    % git co https://github.com/edsu/wikichanges.git
+    % cd wikichanges
     % npm install wikichanges
+    % node example.js
 
 Usage
 -----
