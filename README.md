@@ -43,7 +43,7 @@ Here's a simple example of listening on all Wikipedia channels and printing
 out the page that changed along with its URL.
 
 ```javascript
-var WikiChanges = require("wikichanges");
+var wikichanges = require("wikichanges");
 
 var w = new wikichanges.WikiChanges();
 w.listen(function(change) {
