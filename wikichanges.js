@@ -14,6 +14,7 @@ WikiChanges.prototype = {
     this.callback = callback;
     this.client = new irc({
       server: 'irc.wikimedia.org',
+      port: 8001,
       nick: this.ircNickname,
       log: false
     });
