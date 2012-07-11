@@ -28,7 +28,7 @@ Install
 -------
 
 If you aren't on Ubuntu, try to do the equivalent to get your node.js
-environment set up.
+environment set up, and run a test program:
 
     % sudo apt-get install nodejs npm
     % git co https://github.com/edsu/wikichanges.git
@@ -55,7 +55,7 @@ If you would like to listen only on a particular channel or channels
 create the wikichanges object like this:
 
 ```javascript
-var w = new wikichanges.WikiChanges({channels: ["#de.wikipedia"]);
+var w = new wikichanges.WikiChanges({channels: ["#fr.wikipedia", "#de.wikipedia"]);
 ```
 
 By default wikichanges picks a IRC nick of `wikichanges-{hostname}` where 
