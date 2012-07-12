@@ -31,10 +31,7 @@ If you aren't on Ubuntu, try to do the equivalent to get your node.js
 environment set up, and run a test program:
 
     % sudo apt-get install nodejs npm
-    % git co https://github.com/edsu/wikichanges.git
-    % cd wikichanges
-    % npm install
-    % node example.js
+    % npm install wikichanges
 
 Usage
 -----
