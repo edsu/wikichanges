@@ -1,6 +1,10 @@
 var wikichanges = require("./wikichanges");
 
-w = new wikichanges.WikiChanges();
+w = new wikichanges.WikiChanges({
+  ircNickname: 'wikidatachangestest', 
+  wikipedias: "#wikidata.wikipedia"
+});
+
 w.listen(function(change) {
-  console.log(change.page + " " + change.pageUrl)
+  console.log(change.page + " [" + change.user + "] " + change.pageUrl)
 });

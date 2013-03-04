@@ -34,7 +34,7 @@ WikiChanges.prototype = {
 
 function parse_msg(msg) {
   // i guess this means i have two problems now? :-D
-  var m = /\x0314\[\[\x0307(.+?)\x0314\]\]\x034 (.*?)\x0310.*\x0302(.*?)\x03.+\x0303(.+?)\x03.+\x03 (.*) \x0310(.*)\x03?.*/.exec(msg[1]);
+  var m = /\x0314\[\[\x0307(.+?)\x0314\]\]\x034 (.*?)\x0310.*\x0302(.*?)\x03.+\x0303(.+?)\x03.+\x03 (.*) \x0310(.*)\u0003.*/.exec(msg[1]);
   if (! m) { 
       console.log("failed to parse: " + msg);
       return null;
@@ -913,6 +913,29 @@ var wikipedias = {
       "Kategoridiskussion": "category talk", 
       "Fil": "file", 
       "$1 diskussion": "project talk"
+    }
+  },
+  "#wikidata.wikipedia": {
+    "short": "wd", 
+    "long": "Wikidata", 
+    "namespaces": {
+      "": "main", 
+      "Category": "category", 
+      "Media": "media", 
+      "MediaWiki": "mediawiki", 
+      "Template": "template", 
+      "$1 talk": "project talk", 
+      "Help talk": "help talk", 
+      "User": "user", 
+      "Template talk": "template talk", 
+      "MediaWiki talk": "mediawiki talk", 
+      "Talk": "talk", 
+      "Help": "help", 
+      "File talk": "file talk", 
+      "File": "file", 
+      "User talk": "user talk", 
+      "Special": "special", 
+      "Category talk": "category talk"
     }
   }
 }
