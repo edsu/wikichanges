@@ -23,7 +23,11 @@ WikiChanges.prototype = {
     var client = this.client;
 
     client.connect(function () {
-      client.join(channels);
+      for (var i = 0; i < channels.length; i += 10) { 
+        c = channels.slice(i, i + 10);
+        client.join(c);
+        console.log("joining: " + c);
+      }
       client.on('privmsg', function(msg) { 
         m = parse_msg(msg.params);
         if (m) callback(m);
@@ -60,10 +64,14 @@ function parse_msg(msg) {
   var page = m[1];
   var channel = msg[0];
   var wikipedia = wikipedias[channel]['long'];
-  var wikipediaUrl = 'http://' + wikipedia.replace('#', '') + '.org';
+  var wikipediaUrl = 'http://' + channel.replace('#', '') + '.org';
+  if (channel == "#wikidata.wikipedia") {
+    wikipediaUrl = "http://wikidata.org";
+  }
   var pageUrl = wikipediaUrl + '/wiki/' + page.replace(/ /g, '_');
   var userUrl = wikipediaUrl + '/wiki/User:' + user;
   var namespace = getNamespace(wikipedia, page);
+
 
   return {
     channel: channel,
@@ -913,6 +921,29 @@ var wikipedias = {
       "Kategoridiskussion": "category talk", 
       "Fil": "file", 
       "$1 diskussion": "project talk"
+    }
+  },
+  "#wikidata.wikipedia": {
+    "short": "wd", 
+    "long": "Wikidata", 
+    "namespaces": {
+      "": "main", 
+      "Category": "category", 
+      "Media": "media", 
+      "MediaWiki": "mediawiki", 
+      "Template": "template", 
+      "$1 talk": "project talk", 
+      "Help talk": "help talk", 
+      "User": "user", 
+      "Template talk": "template talk", 
+      "MediaWiki talk": "mediawiki talk", 
+      "Talk": "talk", 
+      "Help": "help", 
+      "File talk": "file talk", 
+      "File": "file", 
+      "User talk": "user talk", 
+      "Special": "special", 
+      "Category talk": "category talk"
     }
   }
 }
