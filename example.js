@@ -25,7 +25,7 @@ var wikichanges = require("./wikichanges");
 
 w = new wikichanges.WikiChanges({
   ircNickname: 'wikidatachangestest', 
-  wikipedias: "#wikidata.wikipedia"
+  wikipedias: ["#wikidata.wikipedia"]
 });
 
 w.listen(function(change) {
