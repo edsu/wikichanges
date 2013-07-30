@@ -1,6 +1,6 @@
 {
   "name": "wikichanges",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Ed Summers <ehs@pobox.com>",
   "main": "wikichanges",
   "dependencies": {
