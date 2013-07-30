@@ -73,6 +73,8 @@ function parse_msg(channel, msg) {
     comment: m[6],
     wikipedia: wikipedia,
     wikipediaUrl: wikipediaUrl,
+    wikipediaShort: wikipedias[channel].short,
+    wikipediaLong: wikipedias[channel].long,
     user: user, 
     userUrl: userUrl,
     unpatrolled: isUnpatrolled,
