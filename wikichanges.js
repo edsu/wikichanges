@@ -939,3 +939,4 @@ var wikipedias = {
 }
 
 exports.WikiChanges = WikiChanges;
+exports.wikipedias = wikipedias
