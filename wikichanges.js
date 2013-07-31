@@ -61,7 +61,7 @@ function parse_msg(channel, msg) {
   }
   var pageUrl = wikipediaUrl + '/wiki/' + page.replace(/ /g, '_');
   var userUrl = wikipediaUrl + '/wiki/User:' + user;
-  var namespace = getNamespace(wikipedia, page);
+  var namespace = getNamespace(channel, page);
 
   return {
     channel: channel,
@@ -89,9 +89,11 @@ function getNamespace(wikipedia, page) {
   ns = null;
   var parts = page.split(':');
   if (parts.length > 1 && parts[1][0] != " ") {
-    ns = parts[0];
+    // if possible try to normalize the namespace to english, otherwise
+    // pass it through unchanged
+    ns = wikipedias[wikipedia]["namespaces"][parts[0]] || parts[0];
   } else {
-    ns = 'Article';
+    ns = 'article';
   }
   return ns;
 }
