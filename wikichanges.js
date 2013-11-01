@@ -20,21 +20,6 @@ WikiChanges.prototype = {
       m = parse_msg(to, msg);
       if (m) callback(m);
     });
-
-    /*
-    this.client.connect(function () {
-      for (var i = 0; i < channels.length; i += 10) { 
-        c = channels.slice(i, i + 10);
-        client.join(c);
-        console.log("joining: " + c);
-      }
-      client.on('privmsg', function(msg) { 
-        m = parse_msg(msg.params);
-        if (m) callback(m);
-      });
-    });
-    */
-
   }
 }
 
@@ -73,7 +58,6 @@ function parse_msg(channel, msg) {
   var userUrl = wikipediaUrl + '/wiki/User:' + user;
   var namespace = getNamespace(wikipedia, page);
 
-
   return {
     channel: channel,
     flag: flag, 
@@ -84,6 +68,8 @@ function parse_msg(channel, msg) {
     comment: m[6],
     wikipedia: wikipedia,
     wikipediaUrl: wikipediaUrl,
+    wikipediaShort: wikipedias[channel].short,
+    wikipediaLong: wikipedias[channel].long,
     user: user, 
     userUrl: userUrl,
     unpatrolled: isUnpatrolled,
@@ -950,3 +936,4 @@ var wikipedias = {
 }
 
 exports.WikiChanges = WikiChanges;
+exports.wikipedias = wikipedias
