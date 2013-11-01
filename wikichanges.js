@@ -1,5 +1,5 @@
 var os = require("os"),
-    irc = require('irc-js'),
+    irc = require('irc'),
     _ = require('underscore')
 
 function WikiChanges(opts) {
@@ -12,17 +12,17 @@ WikiChanges.prototype = {
 
   listen: function(callback) {
     this.callback = callback;
-    this.client = new irc({
-      server: 'irc.wikimedia.org',
-      port: 8001,
-      nick: this.ircNickname,
-      log: false
+    this.client = new irc.Client('irc.wikimedia.org', this.ircNickname, {
+      channels: this.channels
     });
 
-    var channels = this.channels;
-    var client = this.client;
+    this.client.addListener('message', function(from, to, msg) {
+      m = parse_msg(to, msg);
+      if (m) callback(m);
+    });
 
-    client.connect(function () {
+    /*
+    this.client.connect(function () {
       for (var i = 0; i < channels.length; i += 10) { 
         c = channels.slice(i, i + 10);
         client.join(c);
@@ -33,12 +33,14 @@ WikiChanges.prototype = {
         if (m) callback(m);
       });
     });
+    */
+
   }
 }
 
-function parse_msg(msg) {
+function parse_msg(channel, msg) {
   // i guess this means i have two problems now? :-D
-  var m = /\x0314\[\[\x0307(.+?)\x0314\]\]\x034 (.*?)\x0310.*\x0302(.*?)\x03.+\x0303(.+?)\x03.+\x03 (.*) \x0310(.*)\u0003.*/.exec(msg[1]);
+  var m = /\x0314\[\[\x0307(.+?)\x0314\]\]\x034 (.*?)\x0310.*\x0302(.*?)\x03.+\x0303(.+?)\x03.+\x03 (.*) \x0310(.*)\u0003.*/.exec(msg);
   if (! m) { 
       console.log("failed to parse: " + msg);
       return null;
@@ -62,7 +64,6 @@ function parse_msg(msg) {
   var isUnpatrolled = flag.match(/!/) ? true : false;
 
   var page = m[1];
-  var channel = msg[0];
   var wikipedia = wikipedias[channel]['long'];
   var wikipediaUrl = 'http://' + channel.replace('#', '') + '.org';
   if (channel == "#wikidata.wikipedia") {
