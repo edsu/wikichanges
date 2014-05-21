@@ -13,10 +13,6 @@ WikiChanges.prototype = {
   listen: function(callback) {
     this.callback = callback;
     this.client = new irc.Client('irc.wikimedia.org', this.ircNickname, {
-      server: 'irc.wikimedia.org',
-      port: 8001,
-      nick: this.ircNickname,
-      log: false,
       channels: this.channels
     });
 
@@ -24,7 +20,6 @@ WikiChanges.prototype = {
       m = parse_msg(to, msg);
       if (m) callback(m);
     });
-
   }
 }
 
