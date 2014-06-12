@@ -13,7 +13,8 @@ WikiChanges.prototype = {
   listen: function(callback) {
     this.callback = callback;
     this.client = new irc.Client('irc.wikimedia.org', this.ircNickname, {
-      channels: this.channels
+      channels: this.channels,
+      floodProtection: true
     });
 
     this.client.addListener('message', function(from, to, msg) {
