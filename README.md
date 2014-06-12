@@ -30,7 +30,7 @@ Install
 If you aren't on Ubuntu, try to do the equivalent to get your node.js
 environment set up, and run a test program:
 
-    % sudo apt-get install nodejs npm
+    % sudo apt-get install nodejs
     % npm install wikichanges
 
 Usage
