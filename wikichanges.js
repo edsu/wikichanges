@@ -17,9 +17,28 @@ WikiChanges.prototype = {
       floodProtection: true
     });
 
+    // keep track of the last message per channel
+    previousMessage = {};
+
     this.client.addListener('message', function(from, to, msg) {
-      m = parse_msg(to, msg);
-      if (m) callback(m);
+
+      // if there was a previous line that didn't parse try prepending it
+      // to the current message to see if it will parse this time
+      if (previousMessage[to]) {
+        msg = previousMessage[to] + msg;
+      }
+
+      // if parse_msg returns null it failed to parse
+      var m = parse_msg(to, msg);
+      if (m) {
+        callback(m);
+        if (previousMessage[to]) {
+          previousMessage[to] = false;
+        }
+      } else {
+        previousMessage[to] = msg;
+      }
+
     });
   }
 }
@@ -28,7 +47,6 @@ function parse_msg(channel, msg) {
   // i guess this means i have two problems now? :-D
   var m = /\x0314\[\[\x0307(.+?)\x0314\]\]\x034 (.*?)\x0310.*\x0302(.*?)\x03.+\x0303(.+?)\x03.+\x03 (.*) \x0310(.*)\u0003.*/.exec(msg);
   if (! m) { 
-      console.log("failed to parse: " + msg);
       return null;
   } 
 
