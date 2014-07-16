@@ -59,7 +59,9 @@ function parse_msg(channel, msg) {
 
   // see if it looks like an anonymous edit
   var user = m[4];
-  var anonymous = user.match(/\d+.\d+.\d+.\d+/) ? true : false;
+  var anonymous = user.match(/^\d+\.\d+\.\d+\.\d+$/) ? true : false;
+  // FIXME: perhaps make exactly ipv4 and add ipv6 support
+  // adding IPv6 might break some things that depend on this being IPv4 (e.g. anon)
 
   // unpack the flags
   var flag = m[2];
