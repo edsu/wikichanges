@@ -59,7 +59,10 @@ function parse_msg(channel, msg) {
 
   // see if it looks like an anonymous edit
   var user = m[4];
-  var anonymous = user.match(/^\d+\.\d+\.\d+\.\d+$/) ? true : false;
+  var ipv4 = user.match(/^\d+\.\d+\.\d+\.\d+$/) ? true : false;
+  var ipv6 = user.match(/^([0-9a-fA-F]*:){7}[0-9a-fA-F]*$/) ? true : false;
+  var anonymous = ipv4 || ipv6; 
+
   // TODO: perhaps make exactly ipv4 and add ipv6 support
   // adding IPv6 might break some things that depend on this being IPv4 
   // e.g. github.com/edsu/anon
