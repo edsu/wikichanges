@@ -20,6 +20,10 @@ WikiChanges.prototype = {
       m = parse_msg(to, msg);
       if (m) callback(m);
     });
+
+    this.client.addListener('error', function(msg) {
+      console.log('irc error: ', message);
+    });
   }
 }
 
