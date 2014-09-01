@@ -42,7 +42,7 @@ WikiChanges.prototype = {
     });
 
     this.client.addListener('error', function(msg) {
-      console.log('irc error: ', message);
+      console.log('irc error: ', msg);
     });
   }
 }
