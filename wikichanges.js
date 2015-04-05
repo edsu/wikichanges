@@ -56,7 +56,12 @@ function parse_msg(channel, msg) {
 
   // convert change in characters to a (possibly negative) integer
   if (m[5]) {
-    var delta = parseInt(/([+-]\d+)/.exec(m[5])[1]);
+    try {
+      var delta = parseInt(/([+-]\d+)/.exec(m[5])[1]);
+    } catch (e) {
+      console.log('warn: unable to parse delta string "' + m[5] + '": ' + e);
+      var delta = null;
+    }
   } else {
     var delta = null;
   }
