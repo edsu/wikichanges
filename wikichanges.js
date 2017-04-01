@@ -436,6 +436,28 @@ var wikipedias = {
       "Pomo\u010d": "help", 
       "Pogovor o pomo\u010di": "help talk"
     }
+  },
+    "#hr.wikipedia": {
+    "short": "hr", 
+    "long": "Croatian Wikipedia", 
+    "namespaces": {
+      "Kategorija": "category", 
+      "Datoteka": "media", 
+      "MediaWiki": "mediawiki", 
+      "Predlo\u017eak": "template", 
+      "Razgovor $1": "project talk", 
+      "Razgovor o pomo\u0107i": "help talk", 
+      "Suradnik": "user", 
+      "Razgovor o predlo\u0161ku": "template talk", 
+      "Razgovor o MediaWiki": "mediawiki talk", 
+      "Razgovor": "talk", 
+      "Pomo\u0107": "help", 
+      "Razgovor o datoteci": "file talk", 
+      "Slika": "file", 
+      "Razgovor sa suradnikom": "user talk", 
+      "Posebno": "special", 
+      "Razgovor o kategoriji": "category talk"
+    }
   }, 
   "#nl.wikipedia": {
     "short": "nl", 
