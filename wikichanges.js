@@ -950,7 +950,7 @@ var wikipedias = {
     "short": "hi", 
     "long": "Hindi Wikipedia", 
     "namespaces": {
-      "": "मुखपृष्ठ", 
+      "": "main", 
       "श्रेणी": "category", 
       "Media": "media", 
       "मीडियाविकि": "mediawiki", 
@@ -969,6 +969,29 @@ var wikipedias = {
       "श्रेणी वार्ता": "category talk"
     }
   }, 
+  "#simple.wikipedia": {
+    "short": "simple", 
+    "long": "Simple Wikipedia", 
+    "namespaces": {
+      "": "main", 
+      "Category": "category", 
+      "Media": "media", 
+      "MediaWiki": "mediawiki", 
+      "Template": "template", 
+      "$1 talk": "project talk", 
+      "Help talk": "help talk", 
+      "User": "user", 
+      "Template talk": "template talk", 
+      "MediaWiki talk": "mediawiki talk", 
+      "Talk": "talk", 
+      "Help": "help", 
+      "File talk": "file talk", 
+      "File": "file", 
+      "User talk": "user talk", 
+      "Special": "special", 
+      "Category talk": "category talk"
+    }
+  },
   "#wikidata.wikipedia": {
     "short": "wd", 
     "long": "Wikidata", 
