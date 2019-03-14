@@ -946,6 +946,29 @@ var wikipedias = {
       "$1 diskussion": "project talk"
     }
   },
+  "#hi.wikipedia": {
+    "short": "hi", 
+    "long": "Hindi Wikipedia", 
+    "namespaces": {
+      "": "मुखपृष्ठ", 
+      "श्रेणी": "category", 
+      "Media": "media", 
+      "मीडियाविकि": "mediawiki", 
+      "साँचा": "template", 
+      "$1 वार्ता": "project talk", 
+      "सहायता वार्ता": "help talk", 
+      "सदस्य": "user", 
+      "साँचा वार्ता": "template talk", 
+      "मीडियाविकि वार्ता": "mediawiki talk", 
+      "वार्ता": "talk", 
+      "सहायता": "help", 
+      "चित्र वार्ता": "file talk", 
+      "चित्र": "file", 
+      "सदस्य वार्ता": "user talk", 
+      "विशेष": "special", 
+      "श्रेणी वार्ता": "category talk"
+    }
+  }, 
   "#wikidata.wikipedia": {
     "short": "wd", 
     "long": "Wikidata", 
