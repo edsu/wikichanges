@@ -52,7 +52,7 @@ If you would like to listen only on a particular channel or channels
 create the wikichanges object like this:
 
 ```javascript
-var w = new wikichanges.WikiChanges({wikipedias: ["#fr.wikipedia", "#de.wikipedia"]);
+var w = new wikichanges.WikiChanges({wikipedias: ["#fr.wikipedia", "#de.wikipedia"]});
 ```
 
 By default wikichanges picks a IRC nick of `wikichanges-{hostname}` where 
