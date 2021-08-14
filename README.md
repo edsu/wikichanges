@@ -1,6 +1,8 @@
 wikichanges
 ===========
 
+**Note: it is now possible to get the Wikipedia update stream easily from Wikipedia's [EventStreams](https://wikitech.wikimedia.org/wiki/Event_Platform/EventStreams). I think there's so much tooling around the old IRC updates that they haven't been turned off yet, but maybe someday. If you are builing a new tool you should really look at EventStreams!**
+
 wikichanges is a node.js library for getting an edit stream from the 37 major language Wikipedias. The Wikipedia MediaWiki installations are configured to log changes in  [specific IRC channels](http://meta.wikimedia.org/wiki/IRC/Channels#Raw_feeds). wikichanges joins all these channels, listens for updates, which it then parses, and sends as JavaScript objects to a callback of your choosing. Each change will look something like:
 
 ```javascript
